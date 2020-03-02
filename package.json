@@ -1,6 +1,6 @@
 {
   "name": "@ungap/trim-end",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "The trimEnd method for IE",
   "main": "cjs/index.js",
   "scripts": {
@@ -12,7 +12,10 @@
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "test": "nyc node test/index.js"
   },
-  "keywords": ["trimEnd", "IE"],
+  "keywords": [
+    "trimEnd",
+    "IE"
+  ],
   "author": "Andrea Giammarchi",
   "license": "ISC",
   "devDependencies": {
