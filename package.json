@@ -1,0 +1,33 @@
+{
+  "name": "@ungap/trim-end",
+  "version": "0.0.0",
+  "description": "The trimEnd method for IE",
+  "main": "cjs/index.js",
+  "scripts": {
+    "build": "npm run cjs && npm run esm && npm run min && npm run test && npm run size",
+    "cjs": "cp index.js cjs/ && echo 'module.exports = trimEnd;' >> cjs/index.js",
+    "esm": "cp index.js esm/ && echo 'export default trimEnd;' >> esm/index.js",
+    "min": "uglifyjs index.js --support-ie8 --comments=/^!/ -c -m -o min.js",
+    "size": "cat index.js | wc -c && cat min.js | wc -c && gzip -c9 min.js | wc -c && cat min.js | brotli | wc -c",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "test": "nyc node test/index.js"
+  },
+  "keywords": ["trimEnd", "IE"],
+  "author": "Andrea Giammarchi",
+  "license": "ISC",
+  "devDependencies": {
+    "coveralls": "^3.0.9",
+    "nyc": "^15.0.0",
+    "uglify-js": "^3.8.0"
+  },
+  "module": "esm/index.js",
+  "unpkg": "min.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ungap/trim-end.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ungap/trim-end/issues"
+  },
+  "homepage": "https://github.com/ungap/trim-end#readme"
+}
